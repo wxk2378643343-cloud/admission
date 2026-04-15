@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<h2 class="h4">录入成绩</h2>
+<form method="post" action="/score/new" class="card card-body">
+  <input class="form-control mb-2" name="candidate_id" placeholder="candidate_id" required>
+  <input class="form-control mb-2" name="subject" placeholder="科目" required>
+  <input class="form-control mb-2" name="score" placeholder="分数" required>
+  <input class="form-control mb-2" name="total_score" placeholder="总分" required>
+  <button class="btn btn-primary">提交</button>
+</form>
+{% endblock %}

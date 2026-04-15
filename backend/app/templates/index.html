@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="p-4 bg-light rounded-3">
+  <h1 class="h3">高校招生录取系统（未防护演示）</h1>
+  <p class="mb-3">用于毕设漏洞复现，包含 SQL 注入、XSS、越权、暴力登录风险示例。</p>
+  {% if user %}
+  <a class="btn btn-primary" href="/dashboard">进入控制台</a>
+  {% else %}
+  <a class="btn btn-primary" href="/login">进入登录</a>
+  {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<h2 class="h4">考生详情</h2>
+{% if profile %}
+<ul class="list-group">
+  <li class="list-group-item">ID: {{ profile.id }}</li>
+  <li class="list-group-item">姓名: {{ profile.name }}</li>
+  <li class="list-group-item">准考证: {{ profile.exam_no }}</li>
+  <li class="list-group-item">身份证: {{ profile.id_card }}</li>
+  <li class="list-group-item">电话: {{ profile.phone }}</li>
+</ul>
+{% else %}
+<div class="alert alert-warning">不存在该考生。</div>
+{% endif %}
+{% endblock %}
