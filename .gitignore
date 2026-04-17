@@ -28,11 +28,16 @@ backend/logs/
 backend/.pytest_cache/
 
 # Frontend (Vue/Vite)
-frontend/node_modules/
-frontend/dist/
-frontend/.vite/
-frontend/.cache/
-frontend/.eslintcache
+node_modules/
+**/node_modules/
+dist/
+**/dist/
+.vite/
+**/.vite/
+.cache/
+**/.cache/
+.eslintcache
+**/.eslintcache
 
 # Environment files
 .env
