@@ -1,18 +1,36 @@
 # Admission 招生管理系统
 
-本仓库收录招生管理系统的两个独立实现。应用由 Web 前端、Python API 和 SQLite 数据层组成。
+![Vue 3](https://img.shields.io/badge/Vue%203-2563EB?style=flat-square)
+![Vite](https://img.shields.io/badge/Vite-0F766E?style=flat-square)
+![FastAPI](https://img.shields.io/badge/FastAPI-334155?style=flat-square)
+![SQLite](https://img.shields.io/badge/SQLite-B45309?style=flat-square)
 
-| 路径 | 内容 |
+## 📌 项目简介
+
+面向学生与管理人员，涵盖招生信息展示、学生业务和后台管理。
+
+本仓库供**网络安全学习**使用。 `vulnerable_version/` 是有漏洞的历史对照版本，`secure_version/` 是针对课程示例做过修复的版本。可以对照两套源码，理解防护措施和代码变更。
+
+## 🏗️ 系统架构
+
+- 两个版本分别包含 Vue 前端、FastAPI 后端和各自的本地数据库。
+- 前端负责用户交互，后端提供业务 API，SQLite 保存各版本的演示数据。
+
+## 📁 项目结构
+
+| 路径 | 用途 |
 | --- | --- |
-| [修订版](secure_version/) | 日常阅读和本地演示入口 |
-| [修订版说明](secure_version/README.md) | 环境要求、应用启动和功能说明 |
-| `vulnerable_version/` | 供防御性对照审阅的历史实现 |
+| [`secure_version/frontend`](secure_version/frontend) | 修订版 Web 界面 |
+| [`secure_version/backend`](secure_version/backend) | 修订版 API 与数据库逻辑 |
+| [`vulnerable_version`](vulnerable_version) | 用于防御性对照的历史源码 |
 
-## 本地使用
+## 🚀 如何启动
 
-从修订版 README 开始，在对应的前、后端目录分别安装依赖。前端使用自己的锁文件管理依赖。首次使用前查看修订版的配置与数据库说明，使用本地测试数据。两个版本的目录、依赖和数据库应各自独立。
+本地演示使用修订版。先启动后端，再在各自的前端目录运行 `npm ci` 和 `npm run dev`。具体环境和后端命令见[修订版安装与运行说明](secure_version/README.md)。
 
-安全修订的背景和变更说明见 [修订记录](secure_version/doc/修复说明.md)。
+| 入口 | 默认地址 |
+| --- | --- |
+| API | `http://127.0.0.1:8000` |
+| Web | `http://localhost:5173` |
 
-
-在 `secure_version/backend/` 中按版本文档安装依赖后，启动入口为 `uvicorn main:app --reload`。接着在 `secure_version/frontend/` 运行 `npm ci` 和 `npm run dev`。
+演示数据和数据库按版本分开保存。相关资料见[修订记录](secure_version/doc/修复说明.md)。
