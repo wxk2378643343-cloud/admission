@@ -1,30 +1,11 @@
-# vulnerable_version
+# Admission 修订版
 
-目录结构：
+该版本包含招生管理的 Vue 前端与 FastAPI 后端，使用 SQLite 保存本地演示数据。
 
-- `frontend`：Vue 前端
-- `backend`：FastAPI 后端
+## 启动
 
-启动方式：
+1. 在 `secure_version/backend/` 创建并激活 Python 虚拟环境，运行 `python -m pip install -r requirements.txt`。
+2. 在同一目录运行 `python -m uvicorn main:app --reload`。API 使用本机 8000 端口，启动时初始化本地数据库。
+3. 在 `secure_version/frontend/` 运行 `npm ci`，再运行 `npm run dev`，打开 `http://localhost:5173`。
 
-1. 后端
-   - 进入 `vulnerable_version/backend`
-   - 安装依赖：`pip install -r requirements.txt`
-   - 启动：`uvicorn main:app --reload`
-
-2. 前端
-   - 进入 `vulnerable_version/frontend`
-   - 安装依赖：`npm install`
-   - 启动：`npm run dev`
-
-默认账号：
-
-- 管理员：`admin / 123456`
-- 学生：`2026001 / 123456`
-
-当前版本故意保留了若干不安全实现，用于后续安全版对比，包括：
-
-- 明文密码
-- 依赖前端传递角色信息
-- SQL 字符串拼接
-- 公告详情直接渲染 HTML
+前端的 API 地址定义在 [src/api.js](frontend/src/api.js)。首次登录和录入请使用本地演示数据。修订内容见 [修复说明](doc/修复说明.md)。
