@@ -34,3 +34,15 @@
 | Web | `http://localhost:5173` |
 
 演示数据和数据库按版本分开保存。相关资料见[修订记录](secure_version/doc/修复说明.md)。
+
+---
+## ✨ 安全对照学习亮点与合规说明
+
+1. **双版本源码对照学习法**：仓库物理隔离了 `vulnerable_version/`（历史漏洞对照版）与 `secure_version/`（安全加固修订版）及各自的 SQLite 数据，推荐直接对两套目录做 Diff 对比，直观复盘接口鉴权、越权防护、参数校验与数据访问安全改造细节（详见 `secure_version/doc/修复说明.md`）。
+2. **合规与使用声明**：`vulnerable_version/` 仅用于本地网络安全教学与防御性代码审计研究，**请勿将历史对照版部署至公网环境**；日常演示与参考请统一使用 `secure_version/`。
+
+---
+
+## 📄 开源许可证
+
+本项目基于 [MIT License](LICENSE) 开源，详见根目录 [LICENSE](LICENSE) 文件。
